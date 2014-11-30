@@ -1,5 +1,34 @@
 .ts{
-
+    font-size:3em;
+    font-family: 'SimHei';
+    width:50%;
+    height:150px;
+    padding: 10px;
+    border: 0px solid #ccc;
+    margin: 0px auto;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: -moz-box;
+    -moz-box-orient: horizontal;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    display: -o-box;
+    -o-box-orient: horizontal;
+    -o-box-pack: center;
+    -o-box-align: center;
+    display: -ms-box;
+    -ms-box-orient: horizontal;
+    -ms-box-pack: center;
+    -ms-box-align: center;
+    display: box;
+    box-orient: horizontal;
+    box-pack: center;
+    box-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
 
 }
 
@@ -11,17 +40,17 @@ a{
     text-decoration: none;
     background-color: rgba(219,87,5,1);
     font-family: 'SimHei';
-    font-weight: 700;
-    font-size: 1.5em;
+    font-weight: 800;
+    font-size: 2em;
     display: block;
-    padding: 4px;
+    padding: 25px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
     -webkit-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
     -moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
     box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-    margin: 100px auto;
+    margin: 40px auto;
 	width: 160px;
 	text-align: center;
 	-webkit-transition: all .1s ease;
@@ -45,7 +74,7 @@ a:active {
     margin:1px;
     height:500px;
     width:500px;
-    resize:none
+    resize:none;
 }
 
 .div{
@@ -59,9 +88,10 @@ a:active {
  width: 50%;
  height: 300px;
  padding: 10px;
- resize:none;
  border: 1px solid #ccc;
  margin: 0px auto;
+ font-size:2em;
+ resize:none;
  display: -webkit-box;
  -webkit-box-orient: horizontal;
  -webkit-box-pack: center;
@@ -85,3 +115,7 @@ a:active {
 }
 
 
+.timer{
+font-size:18px;
+
+}

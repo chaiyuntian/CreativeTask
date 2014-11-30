@@ -90,6 +90,7 @@ a:active {
  padding: 10px;
  border: 1px solid #ccc;
  margin: 0px auto;
+ font-size:2em;
  resize:none;
  display: -webkit-box;
  -webkit-box-orient: horizontal;
@@ -114,3 +115,7 @@ a:active {
 }
 
 
+.timer{
+font-size:18px;
+
+}

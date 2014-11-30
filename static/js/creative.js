@@ -38,38 +38,88 @@ var welcome = function(config)
     var instruction = config.instruction;
 }
 
+var timer = function(tt,id,end_cb,update_cb)
+{
+    var _total_time = tt;
+    var _cur_time = 0;
+    var _tm_ctrl = new cq(id);
+    var _tmer;
+
+    var _set_time = function(seconds)
+    {
+        var min = parseInt(seconds/60);
+        var sec = parseInt(seconds%60);
+        _tm_ctrl.set_ctn("剩余时间："+min+":"+sec);
+    }
+
+    var _update = function()
+    {
+        if(_cur_time<=0){
+            clearInterval(_tmer);
+            if(end_cb){end_cb();}
+        }
+        if(update_cb){
+            update_cb();
+        }
+        else{
+            _cur_time -= 1;
+            _set_time(_cur_time);
+        }
+    }
+
+    this.start = function(){
+        _cur_time = _total_time;
+        _set_time(_cur_time);
+        _tmer = setInterval(_update,1000)
+    };
+
+    this.cancel = function(){
+        clearInterval(_tmer);
+    };
+
+}
+
+
 
 // creativeApp create
-var App = function(qId,tId,btnId,qs,endcall)
+var App = function(cfg,qs,endcall)
 {
-    var _q_ctrl = new cq(qId);
-    var _a_ctrl = new ca(tId);
+
+    var _q_ctrl = new cq(cfg.qc);
+    var _a_ctrl = new ca(cfg.ac);
     var _qlist = qs;
     var _qcount = _qlist.length;
     var _cur_index = 0;
-    var _btn_ctrl = document.getElementById(btnId);
+    var _btn_ctrl = document.getElementById(cfg.btn);
     var _a= new result();
     var _end_callback = endcall;
     var ap = this;
     var _st = new Date();
+    var _count_timer;
 
     this.start = function(){
         _cur_index = 0;
         _q_ctrl.set_ctn(_qlist[_cur_index]);
         _btn_ctrl.addEventListener("click",okclick);
+        _count_timer = new timer(cfg.tt,cfg.tc,okclick)
+        _count_timer.start();
     };
 
     this._save_result=function(ctn){
         var dt = new Date();
-
         _a.add_result(ctn,dt.getTime()-_st.getTime());};
 
     this.get_results = function(){return _a.get();};
 
+
     var next = function(){
+        _count_timer.cancel();
         ap._save_result(_a_ctrl.get_ctn());
         _cur_index +=1;
-        if(_cur_index>_qcount-1){return false;}else{_q_ctrl.set_ctn(_qlist[_cur_index]);}
+        if(_cur_index>_qcount-1){return false;}else{
+            _q_ctrl.set_ctn(_qlist[_cur_index]);
+            _count_timer.start();
+        }
         return true;
     };
 
@@ -88,6 +138,7 @@ var App = function(qId,tId,btnId,qs,endcall)
     return this;
 };
 
-var app1 = new App("question","answer","button",tasks,function(){alert("end!");});
+var cfg = {qc:"question",ac:"answer",btn:"button",tc:"timer",tt:600};
+var app1 = new App(cfg,tasks,function(){alert("end!");});
 
 //app1.start();
