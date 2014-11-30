@@ -45,6 +45,7 @@ a:active {
     margin:1px;
     height:500px;
     width:500px;
+    resize:none
 }
 
 .div{
@@ -58,6 +59,7 @@ a:active {
  width: 50%;
  height: 300px;
  padding: 10px;
+ resize:none;
  border: 1px solid #ccc;
  margin: 0px auto;
  display: -webkit-box;

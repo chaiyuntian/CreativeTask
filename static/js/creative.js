@@ -51,7 +51,7 @@ var App = function(qId,tId,btnId,qs,endcall)
     var _a= new result();
     var _end_callback = endcall;
     var ap = this;
-    var _st = this;
+    var _st = new Date();
 
     this.start = function(){
         _cur_index = 0;
@@ -76,10 +76,10 @@ var App = function(qId,tId,btnId,qs,endcall)
     var okclick = function(){
         if(!next()){
             endcall();
-            document.write("Test");
+            document.write("Result:");
             var r = _a.get();
             //Test Use
-            for(var i=0;i< r.data.length;i++){document.write(r.time[i]);}
+            for(var i=0;i< r.data.length;i++){document.write(r.time[i]+':'+ r.data[i]+', &nbsp;');}
         }
     };
 
@@ -87,9 +87,6 @@ var App = function(qId,tId,btnId,qs,endcall)
 
     return this;
 };
-
-
-
 
 var app1 = new App("question","answer","button",tasks,function(){alert("end!");});
 
