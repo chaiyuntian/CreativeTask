@@ -79,12 +79,78 @@ var timer = function(tt,id,end_cb,update_cb)
 
 }
 
+var oprecorder = function(ctrl)
+{
+    var _txt_ctrl = ctrl;
+    var _st=0;
+    var _temp="";
+
+    var _time=[];
+    var _text=[];
+
+    var checkTxt = function(b,a)
+    {
+        if(b==a){return "";}
+        // handle delete
+        if(b.length>= a.length){// deleted
+            return "-"+b.slice(a.length-1, b.length-1);
+        }
+        else if(b.length< a.length)
+        {
+            return a.slice(b.length-1, a.length-1);
+        }
+        // handle add
+    }
+
+    var on_txt = function()
+    {
+        var new_text = ctrl.get_ctn();
+        var time = (new Date()).getTime() - _st;
+        var diff = checkTxt(_temp,new_text);
+        _time.push(time);
+        _text.push(diff);
+
+        _temp = new_text;
+
+    }
+
+    this.init = function()
+    {
+        if(window.addEventListener) {_txt_ctrl.ctrl.addEventListener("input", on_txt, false);}
+        else if(window.attachEvent) {_txt_ctrl.ctrl.attachEvent("onpropertychange", on_txt);}
+
+    if(window.VBArray && window.addEventListener) {
+        _txt_ctrl.ctrl.attachEvent("onkeydown", function() {
+        var key = window.event.keyCode;
+        if ((key == 8 || key == 46) && _txt_ctrl.ctrl.value != '') {on_txt();} //handle backspace and delete
+        });
+        _txt_ctrl.ctrl.attachEvent("oncut", on_txt);//handle cut
+    }
+
+    }
+
+    this.start = function()
+    {
+        var dt = new Date();
+        _st = dt.getTime();
+
+        _time = [];
+        _text = [];
+
+        var _temp="";
+
+    }
+
+    this.get_result = function()
+    {
+        return {"time":_time,"text":_text};
+    }
+}
 
 
 // creativeApp create
 var App = function(cfg,qs,endcall)
 {
-
     var _q_ctrl = new cq(cfg.qc);
     var _a_ctrl = new ca(cfg.ac);
     var _qlist = qs;
@@ -92,10 +158,14 @@ var App = function(cfg,qs,endcall)
     var _cur_index = 0;
     var _btn_ctrl = document.getElementById(cfg.btn);
     var _a= new result();
+    this._r = [];// recordresults
     var _end_callback = endcall;
     var ap = this;
     var _st = new Date();
     var _count_timer;
+    var _recorder = new oprecorder(_a_ctrl);
+
+    _recorder.init();
 
     this.start = function(){
         _cur_index = 0;
@@ -103,11 +173,16 @@ var App = function(cfg,qs,endcall)
         _btn_ctrl.addEventListener("click",okclick);
         _count_timer = new timer(cfg.tt,cfg.tc,okclick)
         _count_timer.start();
+        //_recorder properties might be changed in the future.
+        _recorder.start();
     };
 
     this._save_result=function(ctn){
         var dt = new Date();
-        _a.add_result(ctn,dt.getTime()-_st.getTime());};
+        _a.add_result(ctn,dt.getTime()-_st.getTime());
+        this._r.push(_recorder.get_result());
+        };
+
 
     this.get_results = function(){return _a.get();};
 
@@ -119,6 +194,7 @@ var App = function(cfg,qs,endcall)
         if(_cur_index>_qcount-1){return false;}else{
             _q_ctrl.set_ctn(_qlist[_cur_index]);
             _count_timer.start();
+            _recorder.start();
         }
         return true;
     };
