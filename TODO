@@ -1,4 +1,3 @@
-#1 Add timer for each on_text_change event. Record both time and text changes.
 
 #2 Add participant information input page: infomation needed = {name:姓名 gender:性别 major:专业 age:年龄 contact:联系方式}
 
@@ -11,3 +10,7 @@
 #6 Style requirements: Keep it simple.
 
 #7 Remove "Next" button.
+
+
+
+#1 Add timer for each on_text_change event. Record both time and text changes.// To be optimized;
