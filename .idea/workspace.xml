@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8eb0d7e-0346-4f68-aec3-2a28252de89c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DB/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DB/contest.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/ajax.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/ajax.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CreativeTask.py" afterPath="$PROJECT_DIR$/CreativeTask.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/contest.py" afterPath="$PROJECT_DIR$/DB/contest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/creative.js" afterPath="$PROJECT_DIR$/static/js/creative.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/taskMain.html" afterPath="$PROJECT_DIR$/templates/taskMain.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CreativeTask.iws" />
@@ -17,8 +20,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/CreativeTask$CreativeTask.coverage" NAME="CreativeTask Coverage Results" MODIFIED="1417352658360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/CreativeTask$contest.coverage" NAME="contest Coverage Results" MODIFIED="1417606446063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
+    <SUITE FILE_PATH="coverage/CreativeTask$CreativeTask.coverage" NAME="CreativeTask Coverage Results" MODIFIED="1418053454925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/CreativeTask$contest.coverage" NAME="contest Coverage Results" MODIFIED="1418051116057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -32,11 +35,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CreativeTask.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CreativeTask.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CreativeTask.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-              <folding />
+            <state line="19" column="14" selection-start="372" selection-end="372" vertical-scroll-proportion="0.27251732" vertical-offset="167" max-vertical-offset="615">
+              <folding>
+                <element signature="e#0#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,7 +49,7 @@
       <file leaf-file-name="TODO" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TODO">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="24" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="270">
+            <state line="13" column="0" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="330">
               <folding />
             </state>
           </provider>
@@ -62,7 +67,7 @@
       <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="0" selection-start="2589" selection-end="2589" vertical-scroll-proportion="0.0" vertical-offset="1457" max-vertical-offset="1890">
+            <state line="116" column="0" selection-start="2589" selection-end="2589" vertical-scroll-proportion="0.0" vertical-offset="1480" max-vertical-offset="1890">
               <folding />
             </state>
           </provider>
@@ -86,15 +91,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajax.min.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/ajax.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DB/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,24 +103,26 @@
       <file leaf-file-name="contest.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DB/contest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+            <state line="2" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="creative.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="creative.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/creative.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="174" column="29" selection-start="3949" selection-end="3949" vertical-scroll-proportion="0.2195122" vertical-offset="630" max-vertical-offset="1485">
-              <folding>
-                <element signature="e#90#275#0" expanded="false" />
-                <element signature="e#300#481#0" expanded="false" />
-                <element signature="e#508#765#0" expanded="false" />
-                <element signature="e#798#843#0" expanded="false" />
-                <element signature="e#890#1667#0" expanded="false" />
-                <element signature="e#1701#3222#0" expanded="false" />
-              </folding>
+            <state line="2" column="3" selection-start="47" selection-end="47" vertical-scroll-proportion="-1.2" vertical-offset="0" max-vertical-offset="3885">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajax.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/ajax.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="101" selection-start="1566" selection-end="1566" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="840">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,13 +147,14 @@
       <list>
         <option value="$PROJECT_DIR$/static/res/res.json" />
         <option value="$PROJECT_DIR$/templates/welcome.html" />
-        <option value="$PROJECT_DIR$/CreativeTask.py" />
         <option value="$PROJECT_DIR$/static/js/res.js" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/templates/taskMain.html" />
         <option value="$PROJECT_DIR$/static/css/welcome.css" />
         <option value="$PROJECT_DIR$/TODO" />
+        <option value="$PROJECT_DIR$/templates/taskMain.html" />
         <option value="$PROJECT_DIR$/DB/contest.py" />
+        <option value="$PROJECT_DIR$/static/js/ajax.js" />
+        <option value="$PROJECT_DIR$/CreativeTask.py" />
         <option value="$PROJECT_DIR$/static/js/creative.js" />
       </list>
     </option>
@@ -296,14 +295,14 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="http.proxy" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="http.proxy" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -317,7 +316,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.contest">
+  <component name="RunManager" selected="Python.CreativeTask">
     <configuration default="false" name="taskMain.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/CreativeTask/templates/taskMain.html">
       <RunnerSettings RunnerId="JavascriptDebugRunner" />
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
@@ -426,6 +425,9 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -447,9 +449,6 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -563,12 +562,20 @@
       <created>1417361331890</created>
       <updated>1417361331890</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated text change recording.">
+      <created>1417609226464</created>
+      <updated>1417609226464</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updated TODO.">
+      <created>1417609683470</created>
+      <updated>1417609683470</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="22" width="1400" height="783" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -579,7 +586,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39912918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32994187" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32994187" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32994187" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -602,18 +609,22 @@
     <MESSAGE value="changed style and layout.Before demo." />
     <MESSAGE value="Xiaobo gave some advice. Added timer.&#10;TODO: Add timer for each text change event. Remove button after all the app test passed." />
     <MESSAGE value="Added a To-do List." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a To-do List." />
+    <MESSAGE value="Updated text change recording." />
+    <MESSAGE value="Updated TODO." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated TODO." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CreativeTask.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -634,20 +645,27 @@
     <entry file="file://$PROJECT_DIR$/static/js/creative.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="17" selection-start="723" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="1305">
-          <folding>
-            <element signature="e#90#275#0" expanded="false" />
-            <element signature="e#300#481#0" expanded="false" />
-            <element signature="e#508#765#0" expanded="false" />
-            <element signature="e#798#843#0" expanded="false" />
-            <element signature="e#890#1667#0" expanded="false" />
-            <element signature="e#1701#3222#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/res/res.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="28" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="637">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
           <folding />
         </state>
       </provider>
@@ -660,39 +678,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="116" column="0" selection-start="2589" selection-end="2589" vertical-scroll-proportion="0.0" vertical-offset="1457" max-vertical-offset="1890">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="24" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DB/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-          <folding />
-        </state>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DB/contest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="14" selection-start="14" selection-end="14" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="410">
+        <state line="2" column="0" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/ajax.min.js">
+    <entry file="file://$PROJECT_DIR$/static/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="647">
+        <state line="44" column="101" selection-start="1566" selection-end="1566" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="840">
           <folding />
         </state>
       </provider>
@@ -700,6 +704,13 @@
     <entry file="file://$PROJECT_DIR$/static/js/res.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/creative.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="3" selection-start="47" selection-end="47" vertical-scroll-proportion="-1.2" vertical-offset="0" max-vertical-offset="3885">
           <folding />
         </state>
       </provider>
@@ -713,28 +724,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/taskMain.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="48" selection-start="300" selection-end="300" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="375">
+        <state line="9" column="48" selection-start="300" selection-end="300" vertical-scroll-proportion="0.33007336" vertical-offset="0" max-vertical-offset="409">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CreativeTask.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/creative.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="29" selection-start="3949" selection-end="3949" vertical-scroll-proportion="0.2195122" vertical-offset="630" max-vertical-offset="1485">
+        <state line="19" column="14" selection-start="372" selection-end="372" vertical-scroll-proportion="0.27251732" vertical-offset="167" max-vertical-offset="615">
           <folding>
-            <element signature="e#90#275#0" expanded="false" />
-            <element signature="e#300#481#0" expanded="false" />
-            <element signature="e#508#765#0" expanded="false" />
-            <element signature="e#798#843#0" expanded="false" />
-            <element signature="e#890#1667#0" expanded="false" />
-            <element signature="e#1701#3222#0" expanded="false" />
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>

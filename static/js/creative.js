@@ -2,6 +2,7 @@
  * Created by Yuntian Chai on 14-11-30.
  */
 
+
 // content control
 var cq = function(id)
 {
@@ -31,6 +32,16 @@ var result = function()
 
     this.get = function(){return {"data":_dt,"time":_tm};}
     this.num = function(){return _dt.length;}
+    this.ToString = function()
+    {
+        var str = "";
+        for(var i=0;i<_dt.length;i++)
+        {
+            str+=_tm[i]+":"+_dt[i];
+        }
+        return str;
+    }
+
 }
 
 var welcome = function(config)
@@ -107,7 +118,7 @@ var oprecorder = function(ctrl)
         var new_text = ctrl.get_ctn();
         var time = (new Date()).getTime() - _st;
         var diff = checkTxt(_temp,new_text);
-        _time.push(time);
+        _time.push(time/1000.0);
         _text.push(diff);
 
         _temp = new_text;
@@ -145,7 +156,18 @@ var oprecorder = function(ctrl)
     {
         return {"time":_time,"text":_text};
     }
+
+    this.get_result_str = function()
+    {
+        var str = "";
+        for(var i=0;i<_text.length;i++)
+        {
+            str+=_time[i]+":"+_text[i]+",";
+        }
+        return str;
+    }
 }
+
 
 
 // creativeApp create
@@ -158,7 +180,7 @@ var App = function(cfg,qs,endcall)
     var _cur_index = 0;
     var _btn_ctrl = document.getElementById(cfg.btn);
     var _a= new result();
-    this._r = [];// recordresults
+    var _r = [];// recordresults
     var _end_callback = endcall;
     var ap = this;
     var _st = new Date();
@@ -180,7 +202,7 @@ var App = function(cfg,qs,endcall)
     this._save_result=function(ctn){
         var dt = new Date();
         _a.add_result(ctn,dt.getTime()-_st.getTime());
-        this._r.push(_recorder.get_result());
+        _r.push(_recorder.get_result_str());
         };
 
 
@@ -199,13 +221,24 @@ var App = function(cfg,qs,endcall)
         return true;
     };
 
+    var dataSendCallBack = function(response,status)
+    {
+        if(response== "1" &&status == 200)
+        {
+            alert("Success!");
+
+        }
+
+    }
+
+
     var okclick = function(){
         if(!next()){
             endcall();
             document.write("Result:");
-            var r = _a.get();
             //Test Use
-            for(var i=0;i< r.data.length;i++){document.write(r.time[i]+':'+ r.data[i]+', &nbsp;');}
+            sendJson(cfg.baseURI+"/result","POST",{"data":_r},dataSendCallBack);
+            //for(var i=0;i< r.data.length;i++){document.write(r.time[i]+':'+ r.data[i]+', &nbsp;');}
         }
     };
 
@@ -214,7 +247,8 @@ var App = function(cfg,qs,endcall)
     return this;
 };
 
-var cfg = {qc:"question",ac:"answer",btn:"button",tc:"timer",tt:600};
+var cfg = {baseURI:"",qc:"question",ac:"answer",btn:"button",tc:"timer",tt:600};
+
 var app1 = new App(cfg,tasks,function(){alert("end!");});
 
 //app1.start();
