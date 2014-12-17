@@ -1,5 +1,5 @@
-from flask import Flask,render_template,request
-import json
+from flask import Flask,render_template,request,json
+
 import traceback
 
 app = Flask(__name__)
@@ -15,17 +15,9 @@ def task():
 
 @app.route('/result', methods=['POST'])
 def result():
-    #ajson = request.json
-    data = request.data
-    print data
-    #ans = ajson if ajson != None else data
-    #ans = ''.join(request.environ['wsgi.input'].readlines()) if ans==None else ans
+    data = request.get_json()
     try:
-
-        a = json.loads(data)
-        a = json.dumps(a, ensure_ascii=False)
-        print a
-
+        print data
         return "1"
     except:
         traceback.print_exc()

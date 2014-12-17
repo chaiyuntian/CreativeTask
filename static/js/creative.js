@@ -37,7 +37,7 @@ var result = function()
         var str = "";
         for(var i=0;i<_dt.length;i++)
         {
-            str+=_tm[i]+":"+_dt[i];
+            str+=_tm[i]+":"+_dt[i]+",";
         }
         return str;
     }
@@ -104,11 +104,13 @@ var oprecorder = function(ctrl)
         if(b==a){return "";}
         // handle delete
         if(b.length>= a.length){// deleted
-            return "-"+b.slice(a.length-1, b.length-1);
+            if(a.length==0){return "-"+b;}
+            else{return "-"+b.slice(a.length, b.length)};
         }
         else if(b.length< a.length)
         {
-            return a.slice(b.length-1, a.length-1);
+            if(b.length==0){return a;}
+            else{return a.slice(b.length, a.length);}
         }
         // handle add
     }
@@ -162,7 +164,7 @@ var oprecorder = function(ctrl)
         var str = "";
         for(var i=0;i<_text.length;i++)
         {
-            str+=_time[i]+":"+_text[i]+",";
+            str+=_time[i]+":"+_text[i]+"#";
         }
         return str;
     }
@@ -209,6 +211,18 @@ var App = function(cfg,qs,endcall)
     this.get_results = function(){return _a.get();};
 
 
+    this.get_result_json = function(){
+        var r_temp = ''
+        for(var i=0;i<_r.length;i++)
+        {
+            r_temp+=i+"="+_r[i]+","
+
+        }
+        var str_json = '{"result":"'+_a.ToString()+'",'+'"operation":"'+ r_temp + '"}';
+
+        return str_json;
+    };
+
     var next = function(){
         _count_timer.cancel();
         ap._save_result(_a_ctrl.get_ctn());
@@ -223,12 +237,7 @@ var App = function(cfg,qs,endcall)
 
     var dataSendCallBack = function(response,status)
     {
-        if(response== "1" &&status == 200)
-        {
-            alert("Success!");
-
-        }
-
+        if(response== "1" &&status == 200){alert("Success!");}
     }
 
 
@@ -237,7 +246,7 @@ var App = function(cfg,qs,endcall)
             endcall();
             document.write("Result:");
             //Test Use
-            sendJson(cfg.baseURI+"/result","POST",{"data":_r},dataSendCallBack);
+            sendJson(cfg.baseURI+"/result","POST",ap.get_result_json(),dataSendCallBack);//{"data":_r}  ap.get_result_json()
             //for(var i=0;i< r.data.length;i++){document.write(r.time[i]+':'+ r.data[i]+', &nbsp;');}
         }
     };
